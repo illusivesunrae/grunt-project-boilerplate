@@ -1,0 +1,20 @@
+{
+  "name": "grunt-project-boilerplate",
+  "version": "1.0.0",
+  "description": "This is a template repo for creating projects dependent on grunt",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/illusivesunrae/grunt-project-boilerplate.git"
+  },
+  "author": "Rachel O'Connor",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/illusivesunrae/grunt-project-boilerplate/issues"
+  },
+  "homepage": "https://github.com/illusivesunrae/grunt-project-boilerplate#readme"
+}
