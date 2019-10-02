@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": ""
+    "start": "grunt watch",
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,17 @@
   "bugs": {
     "url": "https://github.com/illusivesunrae/grunt-project-boilerplate/issues"
   },
-  "homepage": "https://github.com/illusivesunrae/grunt-project-boilerplate#readme"
+  "homepage": "https://github.com/illusivesunrae/grunt-project-boilerplate#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "grunt": "^1.0.4",
+    "grunt-banner": "^0.6.0",
+    "grunt-contrib-connect": "^2.1.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-rollup": "^10.0.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0"
+  }
 }
