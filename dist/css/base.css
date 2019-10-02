@@ -1,0 +1,22 @@
+.rvt-typeset h1 {
+  font-size: 2.5rem;
+  line-height: 1.1; }
+
+.rvt-typeset h2 {
+  font-size: 1.75rem; }
+
+.rvt-typeset h4,
+.rvt-typeset h5,
+.rvt-typeset h6 {
+  font-size: 1.25rem; }
+
+.rvt-typeset h1,
+.rvt-typeset h2 {
+  font-weight: 700;
+  margin-top: 2rem; }
+
+pre {
+  margin-top: 1.5rem;
+  border-radius: .25rem;
+  border: 1px solid #ddd;
+  padding: 1rem; }

@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
   var babel = require('rollup-plugin-babel');
+  const sass = require('node-sass');
 
   // Project configuration.
   grunt.initConfig({
@@ -25,7 +26,7 @@ module.exports = function(grunt) {
         atBegin: true
       },
       files: ['src/**', 'dist/index.html'],
-      tasks: [ 'rollup', 'usebanner:dist', 'connect' ]
+      tasks: [ 'rollup', 'usebanner:dist', 'sass', 'connect' ]
     },
     rollup: {
       options: {
@@ -41,6 +42,16 @@ module.exports = function(grunt) {
       files: {
         'dest': 'dist/main.js',
         'src': 'src/index.js'
+      }
+    },
+    sass: {
+      options: {
+        implementation: sass
+      },
+      dist: {
+        files: {
+          'dist/css/base.css': 'src/sass/base.scss'
+        }
       }
     },
     uglify: {
@@ -67,15 +78,16 @@ module.exports = function(grunt) {
   });
 
   // Load the plugins.
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-rollup');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-banner');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-rollup');
+  grunt.loadNpmTasks('grunt-sass');
 
   // Default task(s).
   grunt.registerTask('default', ['watch']);
 
-  grunt.registerTask('build', ['rollup', 'uglify:dist', 'usebanner:dist']);
+  grunt.registerTask('build', ['rollup', 'uglify:dist', 'usebanner:dist', 'sass']);
 
 };
