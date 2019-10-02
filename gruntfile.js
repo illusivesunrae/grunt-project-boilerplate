@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-  var commonJS = require('rollup-plugin-commonjs');
   var babel = require('rollup-plugin-babel');
 
   // Project configuration.
@@ -31,7 +30,6 @@ module.exports = function(grunt) {
     rollup: {
       options: {
         plugins: [
-          commonJS(),
           babel({
             exclude: './node_modules/**',
             runtimeHelpers: true
