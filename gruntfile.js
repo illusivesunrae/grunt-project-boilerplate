@@ -26,7 +26,7 @@ module.exports = function(grunt) {
         atBegin: true
       },
       files: ['src/**', 'dist/index.html'],
-      tasks: [ 'rollup', 'usebanner:dist', 'sass', 'connect' ]
+      tasks: [ 'rollup', 'sass', 'usebanner:dist', 'connect' ]
     },
     rollup: {
       options: {
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
         name: 'Component'
       },
       files: {
-        'dest': 'dist/main.js',
+        'dest': 'dist/js/main.js',
         'src': 'src/index.js'
       }
     },
@@ -59,8 +59,8 @@ module.exports = function(grunt) {
         banner: `<%= banner %>`
       },
       dist: {
-        src: 'dist/main.js',
-        dest: 'dist/main.min.js'
+        src: 'dist/js/main.js',
+        dest: 'dist/js/main.min.js'
       }
     },
     usebanner: {
@@ -71,7 +71,7 @@ module.exports = function(grunt) {
           linebreak: true
         },
         files: {
-          src: [ 'dist/main.js' ]
+          src: [ 'dist/js/main.js' ]
         }
       }
     }
@@ -88,6 +88,6 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ['watch']);
 
-  grunt.registerTask('build', ['rollup', 'uglify:dist', 'usebanner:dist', 'sass']);
+  grunt.registerTask('build', ['rollup', 'uglify:dist', 'sass', 'usebanner:dist']);
 
 };
