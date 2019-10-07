@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         name: 'Component'
       },
       files: {
-        'dest': 'dist/js/main.js',
+        'dest': 'dist/main.js',
         'src': 'src/index.js'
       }
     },
@@ -48,8 +48,8 @@ module.exports = function(grunt) {
         banner: `<%= banner %>`
       },
       dist: {
-        src: 'dist/js/main.js',
-        dest: 'dist/js/main.min.js'
+        src: 'dist/main.js',
+        dest: 'dist/main.min.js'
       }
     },
     usebanner: {
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
           linebreak: true
         },
         files: {
-          src: [ 'dist/js/main.js' ]
+          src: [ 'dist/main.js' ]
         }
       }
     }
