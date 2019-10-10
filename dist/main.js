@@ -30,6 +30,10 @@ var Component = (function (exports) {
     return Constructor;
   }
 
+  function _readOnlyError(name) {
+    throw new Error("\"" + name + "\" is read-only");
+  }
+
   /**
    * Copyright (C) 2018 The Trustees of Indiana University
    * SPDX-License-Identifier: BSD-3-Clause
@@ -67,7 +71,7 @@ var Component = (function (exports) {
         var alert = document.querySelector('[aria-labelledby="' + id + '"]');
 
         if (!alert) {
-          alert = document.getElementById(id);
+          alert = (_readOnlyError("alert"), document.getElementById(id));
         }
 
         if (!alert) {

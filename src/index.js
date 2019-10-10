@@ -16,7 +16,7 @@ export class Alert {
   }
 
   handleClick(id) {
-    var dismissButton = event.target.closest('[data-alert-close]');
+    const dismissButton = event.target.closest('[data-alert-close]');
 
     // If the target wasn't the dismiss button bail.
     if (!dismissButton) return;
@@ -25,7 +25,7 @@ export class Alert {
   }
 
   dismissAlert(id, callback) {
-    var alert = document.querySelector('[aria-labelledby="' + id + '"]');
+    const alert = document.querySelector('[aria-labelledby="' + id + '"]');
 
     if (!alert) {
       alert = document.getElementById(id);
